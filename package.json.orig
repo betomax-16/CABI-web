@@ -1,6 +1,6 @@
 {
   "name": "fb-bicicletas",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -29,10 +29,15 @@
     "@nguniversal/module-map-ngfactory-loader": "^6.1.0",
     "angular-2-local-storage": "^2.0.0",
     "angularfire2": "^5.0.2",
+<<<<<<< HEAD
     "angularx-qrcode": "^1.2.4",
     "core-js": "^2.5.4",
     "firebase": "^5.5.2",
     "ngx-webcam": "^0.2.0",
+=======
+    "core-js": "^2.5.4",
+    "firebase": "^5.5.2",
+>>>>>>> 9e9cbab... [WIP]Use Firebase Auth
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },

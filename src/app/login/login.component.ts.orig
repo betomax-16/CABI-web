@@ -2,9 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ShareLoginService } from '../services/shareLogin.service';
 import { Router } from '@angular/router';
 import { LocalStorageService } from 'angular-2-local-storage';
-import { AuthService, loginErrorMesssages } from '../services/auth.service';
+<<<<<<< HEAD
+import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
 import { MatSnackBar } from '@angular/material';
+=======
+import { AuthService } from '../services/auth.service'
+>>>>>>> 9e9cbab... [WIP]Use Firebase Auth
 
 @Component({
   selector: 'app-login',
@@ -13,6 +17,7 @@ import { MatSnackBar } from '@angular/material';
 })
 export class LoginComponent implements OnInit {
 
+<<<<<<< HEAD
   email = '';
   pass = '';
 
@@ -22,10 +27,27 @@ export class LoginComponent implements OnInit {
               private authService: AuthService,
               private userService: UserService,
               public notificacionSnackBar: MatSnackBar) { }
+=======
+  user = null;
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+    ) {}
+
+  signInWithGoogle() {
+      this.authService.signInWithGoogle()
+      .then((res) => {
+          this.router.navigate(['/usuarios'])
+        })
+      .catch((err) => console.log(err));
+    }
+>>>>>>> 9e9cbab... [WIP]Use Firebase Auth
 
   ngOnInit() {
   }
 
+<<<<<<< HEAD
   login() {
     // this.userService.getUserByEmail(this.email).snapshotChanges().subscribe(
     //   res => {
@@ -52,7 +74,7 @@ export class LoginComponent implements OnInit {
         });
       }
     })
-    .catch(error => this.sendMessageError(loginErrorMesssages(error)));
+    .catch(error => this.sendMessageError(error.message));
   }
 
   sendMessageError(message) {
@@ -60,4 +82,6 @@ export class LoginComponent implements OnInit {
       duration: 2000,
     } );
   }
+=======
+>>>>>>> 9e9cbab... [WIP]Use Firebase Auth
 }
